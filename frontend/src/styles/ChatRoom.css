@@ -1,0 +1,163 @@
+/* 全局样式 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 容器样式 */
+.chatroom-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题和登出按钮 */
+.chatroom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.chatroom-title {
+  font-size: 2rem;
+  color: #333;
+  margin: 0;
+}
+
+.chatroom-logout {
+  padding: 8px 16px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chatroom-logout:hover {
+  background: #cc0000;
+}
+
+/* 按钮样式 */
+.chatroom-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.chatroom-button {
+  flex: 1 1 45%;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.chatroom-button:hover {
+  background: #0056b3;
+}
+
+/* 消息列表 */
+.chatroom-messages {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.chatroom-message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.chatroom-message.user {
+  background: #007bff;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chatroom-message.ai {
+  background: #e9ecef;
+  color: #333;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* 输入框和发送按钮 */
+.chatroom-input-container {
+  display: flex;
+  gap: 10px;
+}
+
+.chatroom-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.chatroom-send {
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.chatroom-send:hover {
+  background: #0056b3;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .chatroom-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .chatroom-buttons {
+    gap: 8px;
+  }
+
+  .chatroom-button {
+    flex: 1 1 100%;
+  }
+
+  .chatroom-title {
+    font-size: 1.5rem;
+  }
+
+  .chatroom-input {
+    font-size: 0.9rem;
+  }
+
+  .chatroom-send {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,78 @@
+/* This is the code I write. */
+
+/* App.css */
+.app-header {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
+
+.text-board {
+  background-color: #f9f9f9; /* Light background for contrast */
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  margin: 20px auto;
+  max-width: 600px; /* Centered and limited width for readability */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
+}
+
+.text-board h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.text-board ul {
+  list-style-type: disc; /* Bullet points */
+  font-size: 1.25rem; /* Large, readable font size */
+  line-height: 1.75; /* Increased line spacing for readability */
+  padding-left: 20px;
+  color: #333;
+}
+
+.text-board li {
+  margin-bottom: 10px;
+}
+/* Accessible List Styling */
+.accessible-list {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.accessible-list li {
+  font-size: 1.5rem; /* Larger text for better readability */
+  line-height: 2; /* Increased spacing between lines */
+  margin-bottom: 15px; /* Extra space between items */
+  display: flex;
+  align-items: center; /* Align icon and text */
+  color: #333; /* High contrast text */
+}
+
+.accessible-list li span {
+  font-size: 2rem; /* Larger icons for better visibility */
+  margin-right: 10px; /* Space between icon and text */
+}
+
+.icon-return::before {
+  content: "🔄"; /* Replace with a suitable return icon */
+}
+
+.icon-track::before {
+  content: "📦"; /* Replace with a suitable tracking icon */
+}
+
+.icon-product::before {
+  content: "🔍"; /* Replace with a suitable product search icon */
+}
+
+.icon-support::before {
+  content: "🛠️"; /* Replace with a suitable support icon */
+}
+
+.accessible-list li strong {
+  font-weight: bold; /* Emphasize text */
+}

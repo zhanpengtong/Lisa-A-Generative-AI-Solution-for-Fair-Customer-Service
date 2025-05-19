@@ -1,0 +1,23 @@
+# Node dependencies
+node_modules/
+frontend/node_modules/
+server/node_modules/
+
+# Builds and logs
+dist/
+build/
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+*.swp
+
+# Archives and media
+*.zip
+*.mp4
+*.ppt
+*.pptx
