@@ -1,28 +1,30 @@
-
 # 💬 Lisa – A Generative AI Solution for Fair Customer Service
 
-**Lisa** is an end-to-end full-stack project designed and developed individually by Zhanpeng Tong to explore human-centered, generative AI applications for customer service. Lisa empowers fair, consistent, and helpful communication between companies and customers using LLM APIs behind a clean UI interface.
+**Lisa** is a full-stack generative AI system developed end-to-end by **Zhanpeng Tong** to demonstrate how human-centered design and LLM-powered reasoning can improve fairness, personalization, and efficiency in customer service.
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer      | Technology                    |
-|------------|-------------------------------|
-| Frontend   | React + TypeScript + Vite     |
-| Backend    | Node.js + Express             |
-| AI Service | LLM API (e.g., OpenAI/GPT-based endpoint) |
-| Dev Tools  | Vite, npm, Git, REST API, .env configuration |
+| Layer      | Technology                                          |
+|------------|-----------------------------------------------------|
+| Frontend   | React + TypeScript + Vite                          |
+| Backend    | Node.js + Express + JWT                            |
+| AI Service | OpenAI GPT API (parameterized prompt calls)        |
+| Dev Tools  | REST API, Axios, .env config, Git, Vite, Postman   |
+| Database   | MongoDB (user context + session tracking)          |
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
-- Clean UI for customer service interaction
-- Prompt input field for user-generated complaints/questions
-- Dynamic, consistent, LLM-generated replies
-- Frontend-backend API integration
-- Modular backend code with service-routing-model structure
+- 📱 **Clean UI** with session-based chat window and order dashboard  
+- 💬 **Multi-turn dialogue support** with full chat history passed in prompts  
+- ⚙️ **Role-based, few-shot prompt engineering** for personalized assistant behavior  
+- 📡 **Secure REST API** backend with JWT-authenticated user context  
+- 🧠 **Dynamic memory chaining**, token length control, and temperature tuning  
+- 🛑 **Feedback reporting system** to flag unsatisfactory replies (with chat transcript)  
+- 🪄 **Human-Centered AI elements**: transparency labels, ethical guardrails, explainability UX  
 
 ---
 
@@ -30,26 +32,27 @@
 
 ```
 Lisa-AI/
-├── frontend/                     # React TypeScript frontend
-│   ├── index.html
+├── frontend/                     # Vite-based React frontend
 │   ├── src/
+│   │   ├── ChatRoom.tsx         # Core dialogue logic + context memory
+│   │   ├── ManageOrder.tsx      # Order management UI
+│   │   ├── useText.ts           # Prompt utilities
 │   └── vite.config.ts
 │
-├── server/                       # Express.js backend
-│   ├── server.js
-│   ├── routes/
-│   ├── services/
-│   ├── models/
-│   └── .env                      # Contains LLM API keys
+├── server/                      # Express backend
+│   ├── routes/                  # Chat + order APIs
+│   ├── services/                # LLM API logic
+│   ├── models/                  # MongoDB schemas
+│   └── .env                     # API keys, config
 ```
 
 ---
 
-## ▶️ How to Run
+## ▶️ How to Run Locally
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/Lisa-AI.git
+git clone https://github.com/zhanpengtong/Lisa-A-Generative-AI-Solution-for-Fair-Customer-Service.git
 cd Lisa-AI
 ```
 
@@ -67,21 +70,33 @@ npm install
 npm run dev
 ```
 
-> 💡 Make sure to add your LLM API key to `server/.env`
+> 💡 Make sure to configure your `.env` file with a valid OpenAI API key and MongoDB URI
+
+---
+
+## 🔍 How It Works
+
+When a user sends a message:
+
+1. **Frontend ChatRoom** component captures input and appends it to the current `messages[]` history.
+2. The entire message history is sent to the **backend** via a POST request.
+3. The **backend service layer** formats the prompt and sends it to **OpenAI GPT** with parameters like temperature and max tokens.
+4. The response is returned and rendered on screen, with updated `messages[]` and optional feedback flagging.
+5. All flagged sessions are stored for audit and future model improvement.
 
 ---
 
 ## 🧑‍💻 Developer Notes
 
-This project was fully designed and implemented by **Zhanpeng Tong** as part of a capstone for exploring human-centered generative AI interfaces.
-
-- Frontend: Vite + React + TS from scratch
-- Backend: Built with Express.js and modular route/controller logic
-- AI Service: Integrated LLM API with parameterized prompt handling
-- Focus: Transparency, fairness, and usability in automated responses
+This project was designed and built from scratch by **Zhanpeng Tong** to demonstrate practical skills in:
+- Full-stack LLM application development
+- Prompt engineering and AI integration
+- Ethical UX and human-AI interaction design
+- JWT authentication and context-aware communication
+- React state management and RESTful API architecture
 
 ---
 
 ## 📄 License
 
-MIT – for educational, demo, and portfolio use only.
+MIT – Educational use and portfolio demonstration only.
